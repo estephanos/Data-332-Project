@@ -20,7 +20,7 @@ We primarily used R studio for our analysis of the data sets provided by the bio
 ## DataSets 2: Ladybug Data
 ### Data Dictonary:
 ##### Species: classification comprising related organisms that share common characteristics and are capable of interbreeding
-##### Scan Code: Unique Code given by augustana to each specie
+##### Scan Code: Unique Code given by Augustana to each specie
 ##### Collector: The person who gathered the insects
 ##### Identifier: The person who identified the kind of species
 ##### Country: The country the insects were collected
