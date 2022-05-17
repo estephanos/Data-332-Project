@@ -65,7 +65,7 @@ df_species_count <- df %>%
   count(Species, plot)
 
 df_species_count %>%
-  ggplot(aes(x = Species, y= n , fill = plot )) +
+  ggplot(aes(x = Species, y = n , fill = plot )) +
   geom_col() +
   scale_x_reordered() +
   coord_flip() +
@@ -84,4 +84,21 @@ dfCollector_count %>%
   coord_flip() +
   facet_wrap(~ collector) +
   labs(x="Species", y = "Count")
+
+
+#
+df$month = month(df$date)
+df$month = as.factor(df$month)
+species_count_by_month = df%>%
+  count(Species, month)
+
+species_count_by_month %>%
+  ggplot(aes(x = n, y =Species, fill = month)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 2))+
+  scale_fill_discrete(name = "Month", labels = c("June", "July", "August"))+
+  labs(title = "Species Count By Month",
+       x = "Count",
+       y = "Species",
+       color = "Month") +
+  theme_modern_rc()
 
