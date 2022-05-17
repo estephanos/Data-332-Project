@@ -72,13 +72,13 @@ wing_length_plot = df_1 %>%
   theme_fivethirtyeight() +
   theme(axis.title = element_text()) +
   scale_linetype_manual(values = c("dashed", "solid"))+
-  stat_peaks(colour = "red") +
-  stat_peaks(geom = "text", colour = "red", 
+  stat_peaks(geom = "text", colour = "red",
              vjust = -0.5, x.label.fmt = "%Y") +
   stat_valleys(colour = "blue") +
   stat_valleys(geom = "text", colour = "blue", angle = 45,
                vjust = 1.5, hjust = 1,  x.label.fmt = "%Y")
 
+wing_length_plot
 
 #scatter plot of average wing width over decades grouped by sex
 wing_width_plot = df_1 %>%
@@ -104,16 +104,16 @@ wing_width_plot = df_1 %>%
 #bar plot for average apex area over decades grouped by sex
 apex_area_plot = df_1 %>%
   ggplot(aes(x = Date, y = AverageApexArea, color = sex, fill = sex)) +
-  geom_bar(stat = "identity", position = "dodge")+ theme_minimal()+
-  geom_smooth(method = glm, se = FALSE, fullrange = TRUE)+
+  geom_boxplot(alpha = 0) +
+  geom_jitter(alpha = 0.5, color = "tomato")+
   scale_x_date(date_breaks = "10 years", date_labels = "%Y") +
   labs(title = "Average Apex Area of Insects Overtime",
        subtitle = "How is apex area affected by sex over decades?",
        x = "Year (Decades)",
        y = "Average Apex Area",
        color = "sex") +
-  theme_classic()
-  
+  theme_pubclean()
+apex_area_plot 
 combined_plot = ggarrange(wing_length_plot, wing_width_plot, apex_area_plot,
                           ncol = 2, nrow = 2)
 combined_plot
@@ -166,6 +166,7 @@ ggarrange(world_plot, usa_plot,
 
 ## Wing Length, Wing Width, Apex Area, and Anterior Spot Area by Country
 InsectMeasurments = c(df_1$AverageWingLength, df_1$AverageWingWidth, df_1$AverageApexArea, df_1$AverageAnteriorSpotA)
+InsectMeasurments
 country_plot = df_1%>%
   gather(InsectMeasurments, Length, 19:22)%>%
   group_by(Country, InsectMeasurments)%>%
