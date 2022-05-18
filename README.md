@@ -30,8 +30,19 @@ We primarily used R studio for our analysis of the data sets provided by the bio
 ##### Species: classification comprising related organisms that share common characteristics and are capable of interbreeding
 ##### Scan Code: Unique Code given by Augustana to each specie
 ##### Collector: The person who gathered the insects
+
 ##### Identifier: The person who identified the kind of species
 ##### Country: The country the insects were collected
 ##### State: The state where the insects were collected from
 
 ### Visualizations:
+![speciesByCollector](https://user-images.githubusercontent.com/60960612/168932310-68ddc1dd-441b-4959-a0f1-80aab11556bf.png)
+#### This combined plot shows individual plots of counts of species colored by Collector.
+
+### ![speciesByPlot](https://user-images.githubusercontent.com/60960612/168932394-2ca403d3-53a2-43f2-9023-11b1ea245c61.png)
+#### This combined plot shows individualt plots of count of species colored by plot code. We can see that plots LP-GU and LP-IC generally have a higher count of species.
+
+### ![speciesByMonth](https://user-images.githubusercontent.com/60960612/168932567-453e95ce-6658-4119-911c-ecbdb598f853.png)
+#### This bar graph shows count of species grouped by month of collection. We can see a general trend of higher counts in the month of July. The species Harmonia parentesis has a large anomalous value in the month of August.
+
+
